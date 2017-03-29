@@ -7,8 +7,10 @@ import { HomePage } from '../pages/home/home';
 import { TaskListPage } from '../pages/task-list/task-list';
 
 // providers
+import { Storage } from '@ionic/storage';
 import { ApiService }   from '../providers/api-service';
 import { TasksService } from '../providers/tasks-service';
+import { UserService } from '../providers/user-service';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -41,6 +43,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ApiService,
     TasksService,
+    Storage,
+    UserService,
   ]
 })
 export class AppModule {}

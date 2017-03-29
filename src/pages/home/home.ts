@@ -5,6 +5,7 @@ import { NavController } from 'ionic-angular';
 import { TaskListPage } from '../task-list/task-list';
 
 import { ApiService } from '../../providers/api-service';
+import { UserService } from '../../providers/user-service';
 
 @Component({
   selector: 'page-home',
@@ -13,11 +14,24 @@ import { ApiService } from '../../providers/api-service';
 export class HomePage {
 
   sections: any = [];
-  constructor(public navCtrl: NavController, private api: ApiService) {
+  user: any = {};
+
+  constructor(public navCtrl: NavController, 
+              private api: ApiService,
+              private userService: UserService) {
     
   }
 
   ionViewDidLoad() {
+    this.userService.token().then(token => {
+      this.userService.currentUser(token).then(data => {
+        this.user = data;
+        console.log(`user: ${this.user.uid}`);
+      }).catch(error => {
+        console.log(error.toString() + ' ---- ');
+      });
+    });
+    
     this.sections = [{
       'icon': 'icon1.png',
       'title': '开始赚钱',

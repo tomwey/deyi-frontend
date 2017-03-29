@@ -11,14 +11,14 @@ import { Md5 } from 'ts-md5/dist/md5';
   for more info on providers and Angular 2 DI.
 */
 
-const API_HOST: string = "http://m.deyiwifi.com/api/v1";
+const API_HOST: string = "http://10.19.0.227:3000/api/v1";//"http://m.deyiwifi.com/api/v1";
 const API_KEY:  string = "4f8649737bc94fe68c39d1b133eba488";
 
 @Injectable()
 export class ApiService {
 
   constructor(public http: Http) {
-    console.log('Hello ApiService Provider');
+    // console.log('Hello ApiService Provider');
   }
 
   // 处理GET请求

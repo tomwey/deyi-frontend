@@ -14,8 +14,8 @@ export class TasksService {
     
   }
 
-  getTaskList(uid) {
-    return this.api.get('tasks/home', { uid: uid });
+  getTaskList(token) {
+    return this.api.get('tasks/home', { token: token });
   }
 
   grabTask(uid, taskId) {
