@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      得益
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="refresh()">
+        <ion-icon name="refresh"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="user-caption">
+    <div class="user-base clearfix">
+      <div class="user-base-info">
+        <h2 class="subtitle">ID:562066</h2>
+        <img src="assets/images/avatar/normal.png" />
+      </div>
+      <div class="user-balance">
+        <h2 class="subtitle">我的余额（元）</h2>
+        <p class="balance">1.02</p>
+      </div>
+    </div>
+
+    <div class="user-info-2 clearfix">
+      <div class="user-total-earn">
+        <h2 class="subtitle box">总收入1.02元</h2>
+      </div>
+      <div class="user-total-invites">
+        <h2 class="subtitle box">共邀请0人</h2>
+      </div>
+    </div>
+
+  </div>
+
+  <ion-list class="sections">
+    <button ion-item *ngFor="let sec of sections" (click)="forwardTo(sec);">
+      <ion-avatar item-left>
+        <img src="assets/images/home/{{sec.icon}}" />
+      </ion-avatar>
+      <h2>{{sec.title}}</h2>
+      <ion-note item-right>{{sec.subtitle}}</ion-note>
+    </button>
+  </ion-list>
+</ion-content>

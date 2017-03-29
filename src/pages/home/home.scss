@@ -1,0 +1,79 @@
+page-home {
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    .clearfix:before, .clearfix:after {
+        content: " ";
+        display: table;
+    }
+
+    *:before, *:after {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+    }
+
+    .clearfix:after {
+        clear: both;
+    }
+
+    .user-caption {
+        margin-left: auto;
+        margin-right: auto;
+        padding: 15px;
+        background-color: rgb(230,88,88);
+        .subtitle {
+            font-size: 1em;
+        }
+
+        .user-base {
+            background-color: rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 10px;
+            color: white;
+            p,img {
+                margin-top: 10px;
+            }
+            .user-base-info {
+                float: left;
+                img {
+                    border-radius: 50%;
+                }
+            }
+            .user-balance {
+                float: right;
+                text-align:right;
+                .balance {
+                    font-size: 1.5em;
+                    padding-top: 10px;
+                }
+            }
+        }
+
+        .user-info-2 {
+            margin-top: 15px;
+            .box {
+                text-align: center;
+                border-radius: 6px;
+                background-color: rgba(0, 0, 0, 0.1);
+                padding: 10px;
+                color: white;
+                font-size: 1em;
+            }
+
+            .user-total-earn {
+                float: left;
+                width: 50%;
+                padding-right: 8px;
+            }
+
+            .user-total-invites {
+                float: right;
+                width: 50%;
+                padding-left: 8px;
+            }
+        }
+    }
+}
