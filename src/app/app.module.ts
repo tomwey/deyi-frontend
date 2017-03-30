@@ -5,6 +5,7 @@ import { DeyiApp } from './app.component';
 // pages
 import { HomePage } from '../pages/home/home';
 import { TaskListPage } from '../pages/task-list/task-list';
+import { TaskDetailPage } from '../pages/task-detail/task-detail';
 
 // providers
 import { Storage } from '@ionic/storage';
@@ -20,6 +21,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     DeyiApp,
     HomePage,
     TaskListPage,
+    TaskDetailPage,
   ],
   imports: [
     IonicModule.forRoot(DeyiApp, {
@@ -36,6 +38,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     DeyiApp,
     HomePage,
     TaskListPage,
+    TaskDetailPage,
   ],
   providers: [
     StatusBar,

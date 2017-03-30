@@ -1,0 +1,52 @@
+page-task-detail {
+    .task-detail {
+        background-color: rgb(247,247,247);
+    }
+        .earn {
+        font-size: 0.8em;
+        color: red;
+        .price {
+            font-size: 1.8em;
+        }
+    }
+
+    .red {
+        color: red;
+    }
+    .rewards-info {
+        text-align: center;
+        h2 {
+            font-size: 1.2em;
+        }
+        .reward {
+            font-size: 0.8em;
+            color: red;
+            padding: 10px 0; 
+            .money {
+                font-size: 2em;
+            }
+        }
+        .expire-time {
+            font-size: 0.8em;
+            color: rgb(168,168,168);
+        }
+    }
+
+    .download-tip {
+        text-align: center;
+        padding: 0 30px;
+        font-size: 0.8em;
+        word-wrap: break-word; 
+        // word-break: normal; 
+    }
+
+    .app-info {
+        text-align: center;
+        img {
+            max-width: 60px;
+            margin: 0 auto;
+            display: block;
+            margin-bottom: 10px;
+        }
+    }
+}

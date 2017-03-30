@@ -4,6 +4,8 @@ import { NavController, NavParams } from 'ionic-angular';
 import { TasksService } from '../../providers/tasks-service';
 import { UserService } from '../../providers/user-service';
 
+import { TaskDetailPage } from '../task-detail/task-detail';
+
 /*
   Generated class for the TaskList page.
 
@@ -58,6 +60,21 @@ export class TaskListPage {
 
   grabTask(task) {
     console.log(task);
+    if (task.in_progress) {
+      this.navCtrl.push(TaskDetailPage, { task: task });
+    } else {
+      // 抢任务
+      this.userService.token().then(token => {
+        this.tasksService.grabTask(task.id, token).then(data => {
+          console.log(data);
+          this.navCtrl.push(TaskDetailPage, { task: data });
+        }, error => {
+          console.log(error);
+        }).catch(error => {
+          console.log(`err: ${error}`);
+        });
+      });
+    }
   }
 
 }

@@ -18,15 +18,19 @@ export class TasksService {
     return this.api.get('tasks/list', { token: token });
   }
 
-  grabTask(uid, taskId) {
-    return this.api.post('tasks/' + taskId + '/grab', { uid: uid });
+  grabTask(taskId, token) {
+    return this.api.post('tasks/' + taskId + '/grab', { token: token });
   }
 
-  cancelTask(uid, taskId, taskLogId) {
-    return this.api.post('tasks/' + taskId + '/cancel', { uid: uid, id: taskLogId });
+  cancelTask(taskId, orderId, token) {
+    return this.api.post('tasks/' + taskId + '/cancel', { oid: orderId, token: token });
   }
 
-  commitTask(uid, taskId, taskLogId) {
-    return this.api.post('tasks/' + taskId + '/commit', { uid: uid, id: taskLogId });
+  startTask(taskId, orderId, token) {
+    return this.api.post('tasks/' + taskId + '/begin', { token: token, oid: orderId });
+  }
+
+  commitTask(taskId, orderId, token) {
+    return this.api.post('tasks/' + taskId + '/commit', { token: token, oid: orderId });
   }
 }

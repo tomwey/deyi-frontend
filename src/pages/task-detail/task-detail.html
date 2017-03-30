@@ -1,0 +1,79 @@
+<!--
+  Generated template for the TaskDetail page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>任务详情</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="refresh();">
+        <ion-icon name="refresh"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="task-detail">
+  <ion-card>
+    <ion-card-content>
+    <div class="rewards-info">
+      <h2>限时奖励</h2>
+      <p class="reward"><span class="money">{{task.price}}</span>元</p>
+      <p class="expire-time">剩余时间：15:07</p>
+    </div>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      步骤一
+    </ion-card-header>
+    <ion-list>
+      <ion-item text-wrap>
+        <p class="download-tip">前往App Store搜索：<span class="red">新闻</span><br>找到与下方图标相同的应用并下载</p>
+      </ion-item>
+      <ion-item>
+        <div class="app-info">
+          <img [src]="task.icon" />
+          <p>约排在第<span class="red">3</span>位</p>
+        </div>
+      </ion-item>
+      <ion-item>
+        <button ion-button full large>前往App Store</button>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      步骤二
+    </ion-card-header>
+    <ion-list>
+      <ion-item text-wrap>
+        <p class="download-tip">下载完成点击下方的按钮，<span class="red">试玩应用3分钟</span></p>
+      </ion-item>
+      <ion-item>
+        <button ion-button full large color="light">打开应用</button>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      步骤三
+    </ion-card-header>
+    <ion-list>
+      <ion-item text-wrap>
+        <p class="download-tip">点击下方按钮，领取奖励</p>
+      </ion-item>
+      <ion-item>
+        <button ion-button full large color="light">领取奖励</button>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+
+</ion-content>
