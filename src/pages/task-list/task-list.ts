@@ -17,6 +17,9 @@ import { UserService } from '../../providers/user-service';
 export class TaskListPage {
 
   tasks: any = {};
+  currentTasks: any = [];
+  afterTasks: any   = [];
+  doneTasks: any    = [];
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
               private tasksService: TasksService,
@@ -33,13 +36,28 @@ export class TaskListPage {
   loadTasks() {
     this.userService.token().then(token => {
       this.tasksService.getTaskList(token).then(data => {
-        console.log(data);
+        this.tasks = data;
+        if (this.tasks.current) {
+          this.currentTasks = this.tasks.current;
+        }
+
+        if (this.tasks.after) {
+          this.afterTasks = this.tasks.after;
+        }
+
+        if (this.tasks.done) {
+          this.doneTasks = this.tasks.done;
+        }
       })
     });
   }
 
   refresh() {
-    
+    this.loadTasks();
+  }
+
+  grabTask(task) {
+    console.log(task);
   }
 
 }

@@ -1,3 +1,35 @@
 page-task-list {
+    .task-page {
+        background-color: rgb(247,247,247);
+    }
 
+    .earn {
+        font-size: 0.8em;
+        color: red;
+        .price {
+            font-size: 1.8em;
+        }
+    }
+
+    .in-progress {
+        color: red;
+        font-size: 1em;
+    }
+
+    .after-tasks {
+        .caption {
+            padding: 5px 20px 0 20px;
+            .title {
+                padding: 10px;
+                border: 2px dashed rgb(201,201,201);
+                text-align: center;
+                font-size: 1em;
+                color: rgb(201,201,201);
+            }
+        }
+
+        .after-task {
+            background-color: rgb(235,235,235);
+        }
+    }
 }
